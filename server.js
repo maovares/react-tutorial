@@ -21,6 +21,12 @@ var COMMENTS_FILE = path.join(__dirname, 'comments.json');
 app.set('port', (process.env.PORT || 3000));
 
 app.use('/', express.static(path.join(__dirname, 'public')));
+app.use('/scripts',  express.static(__dirname + '/node_modules/react/dist/'));
+app.use('/scripts',  express.static(__dirname + '/node_modules/react-dom/dist/'));
+app.use('/scripts',  express.static(__dirname + '/node_modules/babel-standalone/'));
+app.use('/scripts',  express.static(__dirname + '/node_modules/jquery/dist/'));
+app.use('/scripts',  express.static(__dirname + '/node_modules/remarkable/dist/'));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
